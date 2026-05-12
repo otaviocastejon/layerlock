@@ -150,8 +150,6 @@ Run **`npm run check:arch`**, **`npm run layerlock`**, or **`npx layerlock`**. E
 | [**examples/simple**](examples/simple/) | Minimal three-layer project with a deliberate violation (`npm run layerlock`). |
 | [**examples/monorepo**](examples/monorepo/) | Workspaces + `tsconfig` paths and cross-package boundaries. |
 | [**docs/nestjs.md**](docs/nestjs.md) | Nest-style layering, **`presets.nestRecommended()`**, **`layerlock init --nest`**. |
-| **`fixtures/nest-app`** (in this repo) | Larger Nest-shaped fixture used in tests; good for reading patterns, not published as a template package. |
-| **`fixtures/express-hexagonal-app`** (in this repo) | Express + **`presets.hexagonal()`** layout; **`npm test`** in that folder runs CLI and programmatic API smoke against the linked package. |
 
 See [**examples/README.md**](examples/README.md) for commands.
 

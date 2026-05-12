@@ -10,3 +10,4 @@ coverage
 *.local
 local/
 scratch/
+fixtures/

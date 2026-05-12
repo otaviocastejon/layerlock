@@ -19,7 +19,5 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
-      - name: Express hexagonal fixture
-        run: npm run test:fixtures
       - name: CLI smoke
         run: node dist/cli.js --help

@@ -14,4 +14,4 @@ cd examples/simple && npm i && npm run layerlock
 cd examples/monorepo && npm i && npm run layerlock
 ```
 
-For **Nest**-shaped layouts and **`layerlock init --nest`**, see [**docs/nestjs.md**](../docs/nestjs.md) and the **`fixtures/nest-app`** tree in this repository (used in development tests).
+For **Nest**-shaped layouts and **`layerlock init --nest`**, see [**docs/nestjs.md**](../docs/nestjs.md).

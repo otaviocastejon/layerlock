@@ -10,11 +10,12 @@ Thank you for your interest in the project. This document describes how to work 
 npm ci
 npm run build
 npm test
-npm run test:fixtures   # optional; exercises fixtures/express-hexagonal-app against the local build
 npm run lint
 ```
 
 ---
+
+The **`fixtures/`** directory (if present on your machine) is **gitignored** and not published to GitHub — keep local scratch apps there if you need them.
 
 ## Source layout
 

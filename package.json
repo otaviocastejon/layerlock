@@ -48,7 +48,6 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",
-    "test:fixtures": "npm ci --prefix fixtures/express-hexagonal-app && npm test --prefix fixtures/express-hexagonal-app",
     "test:watch": "vitest",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
