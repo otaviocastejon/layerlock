@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "layerlock": ["../../dist/index.d.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "packages/**/*.ts", "layerlock.config.ts", "arch.config.ts"]
+}
+

@@ -1,0 +1,22 @@
+{
+  "name": "express-hexagonal-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "check:arch": "layerlock",
+    "layerlock": "layerlock",
+    "test": "node scripts/layerlock-feature-smoke.mjs && node scripts/layerlock-api-smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "layerlock": "file:../..",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
+  }
+}

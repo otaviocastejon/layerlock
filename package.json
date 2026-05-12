@@ -1,0 +1,64 @@
+{
+  "name": "layerlock",
+  "version": "0.1.0",
+  "description": "Layer Lock: build-time architecture validation for TypeScript — layer boundaries, compiler-aware resolution, CI-friendly CLI.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Joao Otavio Carvalho Castejon",
+  "keywords": [
+    "layerlock",
+    "layer-lock",
+    "architecture",
+    "boundaries",
+    "typescript",
+    "monorepo",
+    "eslint-alternative",
+    "dependency-graph",
+    "nestjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "layerlock": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./schema": "./schemas/layerlock.config.schema.json"
+  },
+  "files": [
+    "dist",
+    "schemas",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:fixtures": "npm ci --prefix fixtures/express-hexagonal-app && npm test --prefix fixtures/express-hexagonal-app",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "jiti": "^2.4.2",
+    "picomatch": "^4.0.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/node": "^22.15.17",
+    "@types/picomatch": "^3.0.2",
+    "eslint": "^9.26.0",
+    "tsup": "^8.4.0",
+    "typescript-eslint": "^8.32.0",
+    "vitest": "^3.1.3"
+  }
+}

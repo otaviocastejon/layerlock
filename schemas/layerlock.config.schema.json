@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unpkg.com/layerlock/schemas/layerlock.config.schema.json",
+  "title": "Layer Lock defineArchitecture input",
+  "description": "Shape consumed by defineArchitecture() in layerlock.config.ts (or legacy arch.config.ts). Layer ids and rule fromLayer values must line up.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "root": {
+      "type": "string",
+      "description": "Filesystem root for globs and tsconfig resolution. Usually omitted so the CLI infers it from the config file path."
+    },
+    "tsconfig": {
+      "type": "string",
+      "description": "Path to tsconfig.json, relative to root or absolute."
+    },
+    "layers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1
+      },
+      "minProperties": 1,
+      "description": "Layer id → picomatch patterns (POSIX, relative to root)."
+    },
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/architectureRule" },
+      "minItems": 1
+    },
+    "unassigned": {
+      "type": "string",
+      "enum": ["ignore", "error"],
+      "description": "Whether files matching no layer glob fail validation."
+    },
+    "ignoreFileGlobs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Source files (relative to root) skipped entirely for violations and layer edges."
+    }
+  },
+  "required": ["layers", "rules"],
+  "$defs": {
+    "architectureRule": {
+      "oneOf": [{ "$ref": "#/$defs/cannotImportRule" }]
+    },
+    "cannotImportRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "fromLayer", "forbiddenLayers"],
+      "properties": {
+        "kind": { "const": "cannotImport" },
+        "fromLayer": { "type": "string" },
+        "forbiddenLayers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "exceptFromGlobs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "When the source file path (relative to root) matches any pattern, this rule does not apply."
+        }
+      }
+    }
+  }
+}

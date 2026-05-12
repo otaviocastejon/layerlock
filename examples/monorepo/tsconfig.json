@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@acme/domain/*": ["packages/domain/src/*"],
+      "@acme/infra/*": ["packages/infra/src/*"]
+    },
+    "skipLibCheck": true
+  },
+  "include": ["packages/*/src/**/*.ts"]
+}
