@@ -31,7 +31,7 @@ npm run lint
 
 ## Publishing (maintainers)
 
-1. Set **`repository`** (and optional **`homepage`**, **`bugs`**) in [`package.json`](package.json) for npm and GitHub.
+1. Confirm **`repository`**, **`homepage`**, and **`bugs`** in [`package.json`](package.json) match your GitHub repo (update if you fork or rename).
 2. Run **`npm run build`** (also runs on **`prepack`**).
 3. Publish with **`npm publish --access public`** (use **`--access public`** when the package name is scoped but the package is public).
 

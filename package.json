@@ -5,6 +5,14 @@
   "type": "module",
   "license": "MIT",
   "author": "Joao Otavio Carvalho Castejon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otaviocastejon/layerlock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/otaviocastejon/layerlock/issues"
+  },
+  "homepage": "https://github.com/otaviocastejon/layerlock#readme",
   "keywords": [
     "layerlock",
     "layer-lock",
